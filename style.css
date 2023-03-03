@@ -170,6 +170,7 @@ input::placeholder{
 }
 .include-flag{
     display: flex;
+    gap: 10px;
    
 }
 

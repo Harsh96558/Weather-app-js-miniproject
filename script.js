@@ -14,7 +14,7 @@ const Flag=document.getElementById('flag')
 const loadingScreen=document.getElementById('loading-screen')
 const geoLocation=document.getElementById('geolocation')
 const geoAccessBtn=document.getElementById('geo-access-btn')
-const errorPara=document.getElementById('error-para')
+const errorMsg=document.getElementById('errorMsg')
 
 
 
@@ -165,10 +165,13 @@ async function showWeather(){
      
 
 ///////////////////////////////////////////////////////
-// if(inputCity.value != data.name){
-//   mainContainer.style.display='block'
-//   cityName.innerHTML=()
-//  }
+if(inputCity.value !== data.name){
+  loadingScreen.classList.remove("active")
+   
+  errorMsg.textContent=(`An error occured please update or connect with the network.... or speling error` )
+  
+
+ }
 
 
 ///////////////////////////////////////////////////////
@@ -176,9 +179,9 @@ async function showWeather(){
      
     } catch (error) {
      console.log("Errror Found" , error);
-     loadingScreen.classList.add("active")
+     loadingScreen.classList.remove("active")
    
-    //  errorPara.innerHTML=(`An error occured please update or connect with the network....` )
+     errorMsg.innerHTML=(`An error occured please update or connect with the network....` )
      
     }
  
